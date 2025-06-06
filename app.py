@@ -17,32 +17,6 @@ def home():
     return jsonify({"activities":lst,"error":False}),200
 
 
-# @app.route("/classes")
-# @swag_from("docs/classes.yaml")
-# def classes():
-#     try:
-#         today = pd.to_datetime(datetime.today().date())
-#         file_df = getDf()
-#         file_df['DateTime'] = pd.to_datetime(file_df['DateTime'], format="%d-%m-%Y  %H:%M:%S")
-#         filtered_df = file_df[file_df['DateTime'] >= today]
-#         lst = []
-#         for index,row in filtered_df.iterrows():
-#             resp = {}
-#             resp['Id'] = row['Activity_Id']
-#             resp['Name'] = row['Activity_Name']
-#             resp['Instructor'] = row['Instructor']
-#             resp['Date'] = row['DateTime'].strftime('%Y-%m-%d')
-#             resp['Time'] = row['DateTime'].strftime('%H:%M')
-#             resp['Duration'] = row['Duration']
-#             resp['Booking_Status'] = row['Booked']
-#             lst.append(resp)
-#         return jsonify({"result":lst,"error":False}),200
-#     except Exception as e:
-#         print(e)
-#         msg = "Error in upcoming_fitness_classes API"
-#         print(msg)
-#         return jsonify({"message":msg,"error":True}),500
-
 @app.route("/classes")
 @swag_from("docs/classes.yaml")
 def classes():
