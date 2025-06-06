@@ -1,0 +1,35 @@
+summary: Accepts a booking request (class_id, client_name, client_email).Validates if slots are available, and reduces available slots upon successful booking
+
+consumes:
+  - application/json
+
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      required:
+        - class_id
+        - client_name
+        - client_email
+      properties:
+        class_id:
+          type: integer
+        client_name:
+          type: string
+        client_email:
+          type: email
+      example:
+        class_id: 1
+        client_name: "Keshav Poddar"
+        client_email: "keshav.poddar30@gmail.com"
+responses:
+  200:
+    description: API Executed successfully
+  409:
+    description: Slots Not Available
+  400:
+    description: Missing or invalid input
+  404:
+    description: Invalid Activity Id

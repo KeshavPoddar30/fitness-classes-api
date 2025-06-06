@@ -1,0 +1,15 @@
+summary: Returns a list of all upcoming fitness classes (name, date/time, instructor, available slots).By default all timings are in IST.Enter your timezone if it is not IST.
+
+parameters:
+  - name: tz
+    in: query
+    description: Timezone (e.g. America/New_York, Europe/London)
+    required: false
+    schema:
+      type: string
+
+responses:
+  200:
+    description: API Executed successfully
+  500:
+    description: Internal Server Error

@@ -1,0 +1,5 @@
+summary: Returns list of activities that our fitness studio offers
+
+responses:
+  200:
+    description: API Executed successfully

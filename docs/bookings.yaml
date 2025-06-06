@@ -1,0 +1,15 @@
+summary: Returns all bookings made by a specific email address
+
+parameters:
+  - in: query
+    name: email
+    required: true
+    schema:
+      type: string
+      format: email
+
+responses:
+  200:
+    description: API Executed successfully
+  404:
+    description: Email not present
